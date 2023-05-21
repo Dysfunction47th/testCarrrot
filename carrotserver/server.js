@@ -17,8 +17,8 @@ app.listen(8080, function () {
 
 // 리액트가 라우팅하게 전권을 넘기고 싶다면 server.js 에 다음과 같은 코드를 밑에 추가하십시오. 
 
-app.get('*', function (요청, 응답) {
-  응답.sendFile(path.join(__dirname, '/react-project/build/index.html'));
+app.get('*', function (request, response) {
+  response.sendFile(path.join(__dirname, '/react-project/build/index.html'));
 });
 
 
@@ -40,3 +40,5 @@ app.get('*', function (요청, 응답) {
 
 // 라우팅 : 라우팅이란 한 네트워크에서 다른 네트워크로 패킷을 이동시키는 과정과 네트워크 안의 호스트에게 패킷들을 전달하는 과정을 말한다.
 // https://codingapple.com/unit/nodejs-react-integration/ 자세한건 이사이트 참고
+
+

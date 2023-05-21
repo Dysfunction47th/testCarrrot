@@ -1,29 +1,30 @@
+
 import logo from './logo.svg';
-import './App.css';
+import  style from './App.css';
+import {useEffect, useState} from 'react';
+import { KAKAO_AUTH_URL } from './Kakao_auth_url';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit 아무거나.
-        </p>
+    <div className='map'>
+        <a
+          className="kakao_btn"
+          href={KAKAO_AUTH_URL} >
+          kakao
+        </a>
+        <p/>
         <a
           className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-                      
-
-          Learn React
+          href="https://reactjs.org" >
+          naver
         </a>
-      </header>
+
+          
+
+
     </div>
   );
 }
 
-
 export default App;
-// ctrl + c react 종료
