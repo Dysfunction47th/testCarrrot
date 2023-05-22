@@ -15,6 +15,7 @@ const REDIRECT_URI =  "http://localhost:3000/auth/kakao";
 
 export const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=code`;
 // const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=code`;
-// window.location.href = KAKAO_AUTH_URL;
+// window.location.href = REDIRECT_URI;
+
 // 인가 코드 추출
 
