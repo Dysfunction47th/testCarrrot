@@ -7,8 +7,9 @@ import {
 
 function Test2() {
     return (
-      <div className='map'>
-            <h1> hihihi  </h1>
+      <div className='map2'>
+            <h1> hihihi_Test2  </h1>
+            <br></br>
       </div>
     );
   }
