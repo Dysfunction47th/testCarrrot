@@ -5,12 +5,12 @@
 import React, { useEffect } from "react";
 import axios from 'axios';
 
-console.log("aaa");
+console.log("KAKAOaaa");
 
 
 function Kakao() {
-    const CLIENT_ID = "41c776625164d69e25ac4002bbcfa399";
-    console.log("aA");
+    const CLIENT_ID = "42380b87adba7fa4b33e2543a0cc75e4";
+    console.log("KAKAOAAAA");
     useEffect(()=> {
         
         let params = new URL(document.location.toString()).searchParams;
@@ -36,7 +36,7 @@ function Kakao() {
     
     return (
         <div>
-            <h1>사실 이페이지는 크게 의미 없다. 첫화면으로 로직이 끝나면 이동시켜주면 된다.</h1>
+            성공
         </div>
       
     );

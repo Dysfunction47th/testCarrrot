@@ -3,7 +3,7 @@
 // const REDIRECT_URI =  `${process.env.REACT_APP_REDIRECT_URI}`;
 
 
-const CLIENT_ID = "41c776625164d69e25ac4002bbcfa399";
+const CLIENT_ID = "42380b87adba7fa4b33e2543a0cc75e4";
 const REDIRECT_URI =  "http://localhost:3000/auth/kakao";
 
 // 프런트엔드 리다이랙트 URI 예시

@@ -6,7 +6,7 @@ import { KAKAO_AUTH_URL } from './Kakao_auth_url';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Test2 from './Test2';
 import Test3 from './auth/test3';
-import Kakao  from './auth/test3';
+import Kakao  from './auth/kakao';
 
 function App() {
   return (
