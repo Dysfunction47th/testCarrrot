@@ -25,9 +25,16 @@ function App() {
         <BrowserRouter>
             <Routes>
               <Route path="Test2" element={<Test2 />}></Route>
+<<<<<<< Updated upstream
               <Route path="/auth/kakao" element={<Kakao/>}></Route>
               <Route path="/auth/test3" element={<Test3/>}></Route>
       
+=======
+              {/* <Route path="/auth/kakao" element={<Kakao/>}></Route> */}
+              {/* <Route path="./auth/test3" element={<Test3/>}></Route> */}
+
+              
+>>>>>>> Stashed changes
               
             </Routes>
 			</BrowserRouter>
