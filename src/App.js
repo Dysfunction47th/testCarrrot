@@ -1,4 +1,5 @@
 
+import React from 'react';
 import logo from './logo.svg';
 import  style from './App.css';
 import {useEffect, useState} from 'react';
@@ -20,21 +21,17 @@ function App() {
         <a
           className="App-link"
           href="https://reactjs.org" >
-          naver
+          navers
         </a>
+
+        
         <BrowserRouter>
             <Routes>
               <Route path="Test2" element={<Test2 />}></Route>
-<<<<<<< Updated upstream
               <Route path="/auth/kakao" element={<Kakao/>}></Route>
               <Route path="/auth/test3" element={<Test3/>}></Route>
-      
-=======
-              {/* <Route path="/auth/kakao" element={<Kakao/>}></Route> */}
-              {/* <Route path="./auth/test3" element={<Test3/>}></Route> */}
 
-              
->>>>>>> Stashed changes
+   
               
             </Routes>
 			</BrowserRouter>
