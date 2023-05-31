@@ -25,7 +25,10 @@ function App() {
           href="https://reactjs.org" >
           navers
         </a>
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         
         <BrowserRouter>
             <Routes>
