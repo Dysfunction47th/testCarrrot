@@ -5,6 +5,10 @@
 import React, { useEffect } from "react";
 import axios from 'axios';
 import qs from  "qs";
+import { Route } from "react-router-dom";
+
+//import { BrowserRouter, Routes, Route } from 'react-router-dom';
+//import profile from '/Proflie';
 
 console.log("KAKAOaaa");
 
@@ -87,11 +91,31 @@ function Kakao() {
 
 
 
-    axios.post(baseURL,payload,
+    // axios.post(baseURL,payload,
+    //     {
+    //         headers: { 
+    //             "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
+    //           },
+    //         // params : {
+    //         //     grant_type: grant_type,
+    //         //     client_id :client_id ,
+    //         //     redirect_uri: "http://localhost:3000/auth/kakao",
+    //         //     code : code,
+    //         // }    
+
+
+    //     }).then(function(response) {
+    //         console.log(response);
+    //     });
+
+    //     window.Kakao.init(client_id);
+    //     window.Kakao.Auth.setAccessToken(res.data.access_token);
+
+    const res = axios.post(baseURL,payload,
         {
             headers: { 
                 "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
-              },
+              }
             // params : {
             //     grant_type: grant_type,
             //     client_id :client_id ,
@@ -104,10 +128,18 @@ function Kakao() {
             console.log(response);
         });
 
+//        window.Kakao.init(client_id);
+//        window.Kakao.Auth.setAccessToken(res.data.access_token);
 
+        const userInfoUrl = "https://kapi.kakao.com/v2/user/me" ;        
 
+        axios.get(userInfoUrl , 
+            {
+                headers: {
+                    Authorization: `Bearer ${payload}`
+                }
 
-
+            });
 
     }, [])
 
@@ -120,7 +152,12 @@ function Kakao() {
     return (
         <div>
             성공
+
+            
+
         </div>
+
+
       
     );
 
@@ -131,5 +168,4 @@ function Kakao() {
 
 
 export default Kakao;
-
 
