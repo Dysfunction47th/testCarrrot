@@ -6,7 +6,9 @@ import React, { useEffect } from "react";
 import axios from 'axios';
 import qs from  "qs";
 
-console.log("KAKAOaaa");
+import { Profile } from '../Profile';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 
 
 function Kakao() {
@@ -14,12 +16,16 @@ function Kakao() {
     // console.log("KAKAOAAAA");
 
     const params = new URL(document.location.toString()).searchParams;
-        const code = params.get("code"); // 인가코드 받는 부분
-        const grant_type = "authorization_code";
-        const client_id = CLIENT_ID ;
+    const code = params.get("code"); // 인가코드 받는 부분
+    const grant_type = "authorization_code";
+    const client_id = CLIENT_ID ;
     
+
+
+
+
     useEffect(()=> {
-        console.log(code);
+        // console.log(code);
 
         
     //     axios.post(`https://kauth.kakao.com/oauth/token?
@@ -58,25 +64,14 @@ function Kakao() {
     //             })
 
 
-
-        //     axios.post(`https://kauth.kakao.com/oauth/token?
-    //         grant_type=${grant_type} 
-    //         &client_id=${client_id}
-    //         &redirect_uri= "http://localhost:3000/auth/kakao"
-    //         &code=${code}` ,
-
+    const userInfoUrl = "https://kapi.kakao.com/v2/user/me";
     var baseURL = "https://kauth.kakao.com/oauth/token"
     
+    const userInfoNickname = "" ;
+    const userInfoDate = "" ;
+    const userInfoId = "" ;
+    
 
-    //  var data = {
-        
-    //     grant_type: grant_type,
-    //     client_id :client_id ,
-    //     redirect_uri: "http://localhost:3000/auth/kakao",
-    //     code : code,
-    //      }    
-
-    // const REDIRECT_URI = "http://localhost:3000/auth/kakao"
     const payload = qs.stringify({
         grant_type: "authorization_code",
         client_id: client_id,
@@ -91,28 +86,43 @@ function Kakao() {
         {
             headers: { 
                 "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
-              },
-            // params : {
-            //     grant_type: grant_type,
-            //     client_id :client_id ,
-            //     redirect_uri: "http://localhost:3000/auth/kakao",
-            //     code : code,
-            // }    
+            },
+
+        }).then(res => {
+            console.log(res);
+             
+            //console.log(config);
+
+            axios.get(userInfoUrl , { 
+                        headers: {
+                            Authorization: `Bearer ${res.data.access_token}`
+                        }
+                    }
+                ).then(resUserInfo =>{
+                        console.log(resUserInfo);
+                        document.write("id : " + resUserInfo.data.id);
+                        document.write("<br>");
+                        document.write("date :" + resUserInfo.data.connected_at);
+                        document.write("<br>");
+                        document.write(resUserInfo.data.kakao_account.profile.nickname)
+                        
+                        let res_userInfo_id = resUserInfo.data.id;
+                        let res_userInfo_date = resUserInfo.data.connected_at;
+                        let res_userInfo_nickname = resUserInfo.data.kakao_account.profile.nickname;
+                        userInfoId = `${res_userInfo_id}`;
+                        userInfoDate = `${res_userInfo_date}`;
+                        userInfoNickname = `${res_userInfo_nickname}`;
 
 
-        }).then(function(response) {
-            console.log(response);
+
+                    })
         });
 
 
+        
 
-
-
-
+        
     }, [])
-
-
-
 
 
     
@@ -120,7 +130,21 @@ function Kakao() {
     return (
         <div>
             성공
+        
+            {/* <BrowserRouter>
+            <Routes>
+   
+              <Route path="../Profile" element={<Kakao/>}></Route>
+   
+   
+      
+            </Routes>
+			</BrowserRouter> */}
+
         </div>
+
+        
+        
       
     );
 
@@ -131,5 +155,6 @@ function Kakao() {
 
 
 export default Kakao;
+
 
 
