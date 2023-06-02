@@ -24,7 +24,7 @@ function Kakao() {
 
 
 
-    useEffect(()=> {
+    // useEffect(()=> {
         // console.log(code);
 
         
@@ -122,7 +122,7 @@ function Kakao() {
         
 
         
-    }, [])
+    // }, [])
 
 
     

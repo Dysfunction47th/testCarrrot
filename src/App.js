@@ -3,6 +3,8 @@ import React from 'react';
 import logo from './logo.svg';
 import  style from './App.css';
 import {useEffect, useState} from 'react';
+
+
 import { KAKAO_AUTH_URL } from './Kakao_auth_url';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -23,14 +25,13 @@ function App() {
           navers
         </a>
 
-        
         <BrowserRouter>
             <Routes>
-   
+
+            
               <Route path="/auth/kakao" element={<Kakao/>}></Route>
-   
-   
-              
+          
+
             </Routes>
 			</BrowserRouter>
       
