@@ -13,17 +13,50 @@ import Kakao  from './auth/kakao';
 function App() {
   return (
     <div className='map'>
-        <a
+        {/* <a
           className="kakao_btn"
           href={KAKAO_AUTH_URL} >
-          kakao
+          <img src='./asset/image/kakao_login_medium_narrow.png'></img>
+          
         </a>
         <p/>
+
+
+
         <a
           className="App-link"
           href="https://reactjs.org" >
           navers
-        </a>
+        </a> */}
+
+
+
+
+      <div className="wrap">
+        <div className="login">
+            <h2>Log-in</h2>
+              <a
+              className="kakao_btn"
+              href={KAKAO_AUTH_URL} >
+              <img src='./asset/image/kakao_login_medium_narrow.png'></img>
+            </a>
+
+            
+
+
+            <a
+              className="App-link"
+              href="https://reactjs.org" >
+              navers
+            </a>
+           
+        </div>
+    </div>
+
+
+
+        
+
 
         <BrowserRouter>
             <Routes>
