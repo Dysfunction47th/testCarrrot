@@ -65,6 +65,7 @@ function Kakao() {
 
 
     const userInfoUrl = "https://kapi.kakao.com/v2/user/me";
+    
     var baseURL = "https://kauth.kakao.com/oauth/token"
     
     const userInfoNickname = "" ;

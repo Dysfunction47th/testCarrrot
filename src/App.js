@@ -6,28 +6,18 @@ import {useEffect, useState} from 'react';
 
 
 import { KAKAO_AUTH_URL } from './Kakao_auth_url';
+import { ABC_NAVER_AUTH_URL } from './Naver_auth_url';
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Kakao  from './auth/kakao';
+import Naver  from './auth/naver';
+
+
 
 function App() {
   return (
     <div className='map'>
-        {/* <a
-          className="kakao_btn"
-          href={KAKAO_AUTH_URL} >
-          <img src='./asset/image/kakao_login_medium_narrow.png'></img>
-          
-        </a>
-        <p/>
-
-
-
-        <a
-          className="App-link"
-          href="https://reactjs.org" >
-          navers
-        </a> */}
 
 
 
@@ -38,18 +28,19 @@ function App() {
               <a
               className="kakao_btn"
               href={KAKAO_AUTH_URL} >
-              <img src='./asset/image/kakao_login_medium_narrow.png'></img>
+              <img src='./asset/kakao/kakao_login_medium_narrow.png' ></img>
             </a>
 
             
 
 
             <a
-              className="App-link"
-              href="https://reactjs.org" >
-              navers
+                className="naver_btn"
+                href={ABC_NAVER_AUTH_URL} >
+                <img src='./asset/naver/btnG_완성형.png'></img>
             </a>
            
+       
         </div>
     </div>
 
@@ -63,7 +54,8 @@ function App() {
 
             
               <Route path="/auth/kakao" element={<Kakao/>}></Route>
-          
+              <Route path="/auth/naver" element={<Naver/>}></Route>
+
 
             </Routes>
 			</BrowserRouter>
