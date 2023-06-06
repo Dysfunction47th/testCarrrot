@@ -56,7 +56,7 @@ function App() {
               <Route path="/auth/kakao" element={<Kakao/>}></Route>
               <Route path="/auth/naver" element={<Naver/>}></Route>
 
-
+            
             </Routes>
 			</BrowserRouter>
       

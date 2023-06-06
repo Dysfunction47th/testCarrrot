@@ -6,7 +6,7 @@ import React, { useEffect } from "react";
 import axios from 'axios';
 import qs from  "qs";
 
-import { Profile } from '../Profile';
+// import { Profile } from '../Profile';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
@@ -23,49 +23,8 @@ function Kakao() {
 
 
 
-
-    // useEffect(()=> {
-        // console.log(code);
-
-        
-    //     axios.post(`https://kauth.kakao.com/oauth/token?
-    //         grant_type=${grant_type} 
-    //         &client_id=${client_id}
-    //         &redirect_uri= "http://localhost:3000/auth/kakao"
-    //         &code=${code}` ,
-    //             { 
-    //                 headers: {
-                        
-    //                     'Content-type': 'application/x-www-form-urlencoded;charset=utf-8'
-    //                 }
-            
-    //             }).then((res) => {
-    //                 console.log(res);
-    //                 // const {data} = res;
-    //                 // const {access_token} = data;
-    //                 // res에 포함된 토큰 받아서 원하는 로직을 하면된다.
-    //                 // if (access_token) {
-    //                 //     console.log(`Bearer ${access_token}`);
-    //                 //     axios.post("http://localhost:3000/auth/kakao" ,
-    //                 //     {},
-    //                 //     {
-    //                 //         headers : {
-    //                 //             Authorization: `Bearer ${access_token}` ,
-    //                 //             'Content-type': 'application/x-www-form-urlencoded',
-    //                 //         },
-    //                 //     } 
-    //                 //     ).then((res) => {
-    //                 //         console.log("데이터 성공 : ");
-    //                 //         console.log(res);
-    //                 //     })
-    //                 // } else {
-    //                 //     console.log("access_token 없음!");                      
-    //                 // }
-    //             })
-
-
     const userInfoUrl = "https://kapi.kakao.com/v2/user/me";
-    
+
     var baseURL = "https://kauth.kakao.com/oauth/token"
     
     const userInfoNickname = "" ;
@@ -94,6 +53,7 @@ function Kakao() {
              
             //console.log(config);
 
+
             axios.get(userInfoUrl , { 
                         headers: {
                             Authorization: `Bearer ${res.data.access_token}`
@@ -101,18 +61,20 @@ function Kakao() {
                     }
                 ).then(resUserInfo =>{
                         console.log(resUserInfo);
-                        document.write("id : " + resUserInfo.data.id);
-                        document.write("<br>");
-                        document.write("date :" + resUserInfo.data.connected_at);
-                        document.write("<br>");
-                        document.write(resUserInfo.data.kakao_account.profile.nickname)
+                        // document.write("id : " + resUserInfo.data.id);
+                        // document.write("<br>");
+                        // document.write("date :" + resUserInfo.data.connected_at);
+                        // document.write("<br>");
+                        // document.write(resUserInfo.data.kakao_account.profile.nickname)
                         
-                        let res_userInfo_id = resUserInfo.data.id;
-                        let res_userInfo_date = resUserInfo.data.connected_at;
-                        let res_userInfo_nickname = resUserInfo.data.kakao_account.profile.nickname;
-                        userInfoId = `${res_userInfo_id}`;
-                        userInfoDate = `${res_userInfo_date}`;
-                        userInfoNickname = `${res_userInfo_nickname}`;
+                        // let res_userInfo_id = resUserInfo.data.id;
+                        // let res_userInfo_date = resUserInfo.data.connected_at;
+                        // let res_userInfo_nickname = resUserInfo.data.kakao_account.profile.nickname;
+                        // userInfoId = res_userInfo_id;
+                        // userInfoDate = res_userInfo_date;
+                        // userInfoNickname = res_userInfo_nickname;
+
+
 
 
 
@@ -131,16 +93,23 @@ function Kakao() {
     return (
         <div>
             성공
+
+            <a
+                className="kakao_btn"
+                href={"../Profile"} >
+                이동
+            </a>
+
+
+            <BrowserRouter>
+                <Routes>
+    
+                    <Route path="./mainpage/a" render={(props , props2) => (userInfoId , userInfoNickname) } element={<a/>}></Route>
+    
+                    <Route path="/kakao" element="../Profile" ></Route>
         
-            {/* <BrowserRouter>
-            <Routes>
-   
-              <Route path="../Profile" element={<Kakao/>}></Route>
-   
-   
-      
-            </Routes>
-			</BrowserRouter> */}
+                </Routes>
+			</BrowserRouter>
 
         </div>
 
