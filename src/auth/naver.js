@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import axios from 'axios';
 import qs from  "qs";
 
-
+//package.json에 //   ,"proxy" : "https://nid.naver.com" 붙이기
+//
 // import { ABC_NAVER_AUTH_URL } from './Naver_auth_url';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';

@@ -37,8 +37,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-"proxy" : "https://nid.naver.com"
-
+  }
+  ,"proxy" : "https://nid.naver.com"
 
 }

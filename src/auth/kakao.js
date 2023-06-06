@@ -61,18 +61,18 @@ function Kakao() {
                     }
                 ).then(resUserInfo =>{
                         console.log(resUserInfo);
-                        // document.write("id : " + resUserInfo.data.id);
-                        // document.write("<br>");
-                        // document.write("date :" + resUserInfo.data.connected_at);
-                        // document.write("<br>");
-                        // document.write(resUserInfo.data.kakao_account.profile.nickname)
+                        document.write("id : " + resUserInfo.data.id);
+                        document.write("<br>");
+                        document.write("date :" + resUserInfo.data.connected_at);
+                        document.write("<br>");
+                        document.write(resUserInfo.data.kakao_account.profile.nickname)
                         
-                        // let res_userInfo_id = resUserInfo.data.id;
-                        // let res_userInfo_date = resUserInfo.data.connected_at;
-                        // let res_userInfo_nickname = resUserInfo.data.kakao_account.profile.nickname;
-                        // userInfoId = res_userInfo_id;
-                        // userInfoDate = res_userInfo_date;
-                        // userInfoNickname = res_userInfo_nickname;
+                        let res_userInfo_id = resUserInfo.data.id;
+                        let res_userInfo_date = resUserInfo.data.connected_at;
+                        let res_userInfo_nickname = resUserInfo.data.kakao_account.profile.nickname;
+                        userInfoId = res_userInfo_id;
+                        userInfoDate = res_userInfo_date;
+                        userInfoNickname = res_userInfo_nickname;
 
 
 

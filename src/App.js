@@ -29,6 +29,7 @@ function App() {
               className="kakao_btn"
               href={KAKAO_AUTH_URL} >
               <img src='./asset/kakao/kakao_login_medium_narrow.png' ></img>
+              
             </a>
 
             
@@ -37,7 +38,10 @@ function App() {
             <a
                 className="naver_btn"
                 href={ABC_NAVER_AUTH_URL} >
-                <img src='./asset/naver/btnG_완성형.png'></img>
+                <img src='./asset/naver/btnG_complete.png'></img>
+
+
+              
             </a>
            
        
