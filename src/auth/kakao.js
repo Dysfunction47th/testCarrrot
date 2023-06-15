@@ -6,10 +6,14 @@ import React, { useEffect } from "react";
 import axios from 'axios';
 import qs from  "qs";
 
-// import { Profile } from '../Profile';
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import { useNavigate } from "react-router-dom";
 
+
+
+import  Mainpage  from "../components/Mainpage";
 
 function Kakao() {
     const CLIENT_ID = "b25d6249bc425acccd1f9a1ccf78a06e";
@@ -21,15 +25,15 @@ function Kakao() {
     const client_id = CLIENT_ID ;
     
 
-
+    const navigate = useNavigate();
 
     const userInfoUrl = "https://kapi.kakao.com/v2/user/me";
 
     var baseURL = "https://kauth.kakao.com/oauth/token"
     
-    const userInfoNickname = "" ;
-    const userInfoDate = "" ;
-    const userInfoId = "" ;
+    const USER_INFO_ID = "" ;
+    const USER_INFO_DATE = "" ;
+    const USER_INFO_NICKNAME = "" ;
     
 
     const payload = qs.stringify({
@@ -51,7 +55,7 @@ function Kakao() {
         }).then(res => {
             console.log(res);
              
-            //console.log(config);
+            // console.log(config);
 
 
             axios.get(userInfoUrl , { 
@@ -67,62 +71,66 @@ function Kakao() {
                         document.write("<br>");
                         document.write(resUserInfo.data.kakao_account.profile.nickname)
                         
+                        localStorage.setItem('user_id', resUserInfo.data.id);
+                        localStorage.setItem('user_date', resUserInfo.data.connected_at);
+                        localStorage.setItem('nickname', resUserInfo.data.kakao_account.profile.nickname);
+                        
+
+                        sessionStorage.setItem('user_id', resUserInfo.data.id);
+                        sessionStorage.setItem('user_date', resUserInfo.data.connected_at);
+                        sessionStorage.setItem('nickname', resUserInfo.data.kakao_account.profile.nickname);
+
+
+
                         let res_userInfo_id = resUserInfo.data.id;
                         let res_userInfo_date = resUserInfo.data.connected_at;
                         let res_userInfo_nickname = resUserInfo.data.kakao_account.profile.nickname;
-                        userInfoId = res_userInfo_id;
-                        userInfoDate = res_userInfo_date;
-                        userInfoNickname = res_userInfo_nickname;
 
-
-
-
-
+                        USER_INFO_ID = res_userInfo_id;
+                        USER_INFO_DATE = res_userInfo_date;
+                        USER_INFO_NICKNAME = res_userInfo_nickname;
+                        
+                        
+                                         
                     })
         });
 
 
+        // navigate("../components/Mainpage" , {replace: true});
+
+        // window.location.href = "src/components/Mainpage.js"; 
         
 
         
+
+        
+        // goToMain();
+
+        
+
     // }, [])
+    
 
 
-    
-    
     return (
         <div>
-            성공
-
-            <a
-                className="kakao_btn"
-                href={"../Profile"} >
-                이동
-            </a>
 
 
-            <BrowserRouter>
-                <Routes>
-    
-                    <Route path="./mainpage/a" render={(props , props2) => (userInfoId , userInfoNickname) } element={<a/>}></Route>
-    
-                    <Route path="/kakao" element="../Profile" ></Route>
-        
-                </Routes>
-			</BrowserRouter>
+
+
+
 
         </div>
 
         
-        
-      
+
     );
+    
 
 }
 
     
     
-
 
 export default Kakao;
 
