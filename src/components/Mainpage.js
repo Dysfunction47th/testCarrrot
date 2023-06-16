@@ -1,7 +1,8 @@
 import React from 'react';
 import style from "./loginScreen.css";
 import { useLocation } from 'react-router-dom';
-
+import axios from 'axios';
+import { useState, useEffect } from "react";
 
 function Mainpage() {
 
@@ -17,7 +18,17 @@ function Mainpage() {
   const date = sessionStorage.getItem('user_date');
   const nickname = sessionStorage.getItem('nickname');
 
+  const [resUserInfo, setResUserInfo] = useState(null);
 
+  useEffect(() => {
+    // `axios.post()` 함수를 사용하여 `resUserInfo` 데이터를 받습니다.
+    axios.post("src/auth/kakao.js").then(response => {
+      setResUserInfo(response.data);
+      console.log(response);
+    });
+  }, []);
+
+  
   return (
     <div>
 

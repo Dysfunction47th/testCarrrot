@@ -15,6 +15,10 @@ import { useNavigate } from "react-router-dom";
 
 import  Mainpage  from "../components/Mainpage";
 
+
+
+
+
 function Kakao() {
     const CLIENT_ID = "b25d6249bc425acccd1f9a1ccf78a06e";
     // console.log("KAKAOAAAA");
@@ -25,16 +29,28 @@ function Kakao() {
     const client_id = CLIENT_ID ;
     
 
-    const navigate = useNavigate();
+    
 
     const userInfoUrl = "https://kapi.kakao.com/v2/user/me";
 
     var baseURL = "https://kauth.kakao.com/oauth/token"
     
-    const USER_INFO_ID = "" ;
-    const USER_INFO_DATE = "" ;
-    const USER_INFO_NICKNAME = "" ;
+   
     
+
+    const navigate = useNavigate();
+
+    function avd(inputRouteCondtion) {
+        let routeCondtion = inputRouteCondtion;
+
+        if (routeCondtion == true) {
+            window.location.href = "src/components/Mainpage.js";         
+            // navigate("src/components/mainpage.js");
+        }
+        // window.location.href = "src/components/Mainpage.js";         
+        // navigate("src/components/mainpage.js");
+    }
+
 
     const payload = qs.stringify({
         grant_type: "authorization_code",
@@ -65,11 +81,11 @@ function Kakao() {
                     }
                 ).then(resUserInfo =>{
                         console.log(resUserInfo);
-                        document.write("id : " + resUserInfo.data.id);
-                        document.write("<br>");
-                        document.write("date :" + resUserInfo.data.connected_at);
-                        document.write("<br>");
-                        document.write(resUserInfo.data.kakao_account.profile.nickname)
+                        // document.write("id : " + resUserInfo.data.id);
+                        // document.write("<br>");
+                        // document.write("date :" + resUserInfo.data.connected_at);
+                        // document.write("<br>");
+                        // document.write(resUserInfo.data.kakao_account.profile.nickname)
                         
                         localStorage.setItem('user_id', resUserInfo.data.id);
                         localStorage.setItem('user_date', resUserInfo.data.connected_at);
@@ -82,32 +98,35 @@ function Kakao() {
 
 
 
-                        let res_userInfo_id = resUserInfo.data.id;
-                        let res_userInfo_date = resUserInfo.data.connected_at;
-                        let res_userInfo_nickname = resUserInfo.data.kakao_account.profile.nickname;
-
-                        USER_INFO_ID = res_userInfo_id;
-                        USER_INFO_DATE = res_userInfo_date;
-                        USER_INFO_NICKNAME = res_userInfo_nickname;
+                        const user_date = {
+                            id: resUserInfo.data.id ,
+                            date: resUserInfo.data.connected_at    ,  
+                            nickname:resUserInfo.data.kakao_account.profile.nickname
                         
-                        
-                                         
+                        };
+                  
+                        axios.post("src/components/mainpage.js" , user_date)
+                        window.location.href = "src/components/Mainpage.js";
+                                                  
                     })
+
+                    
+
+                    avd(1);
+                    // navigate("src/components/mainpage.js");
+
         });
 
-
+        
+        
         // navigate("../components/Mainpage" , {replace: true});
-
-        // window.location.href = "src/components/Mainpage.js"; 
-        
-
-        
 
         
         // goToMain();
 
         
 
+ 
     // }, [])
     
 
