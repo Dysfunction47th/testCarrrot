@@ -7,7 +7,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Kakao  from '../auth/kakao';
 
+import { setIsLoggedIn } from "../App";
+import { handleLogin } from "../App";
+
 function LoginScreen() {
+  
+
+
+
   return (
     <div className='map'>
 
@@ -21,7 +28,7 @@ function LoginScreen() {
               className="kakao_btn1"
               href={KAKAO_AUTH_URL} >
               <img src='../asset/kakao/kakao_login_medium_narrow.png' ></img>
-              
+              {/* {handleLogin()} */}
             </a>
 
             
@@ -54,5 +61,5 @@ function LoginScreen() {
     </div>
   );
 }
-
+export let pageChange = "true";
 export default LoginScreen;
