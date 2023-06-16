@@ -61,5 +61,5 @@ function LoginScreen() {
     </div>
   );
 }
-export let pageChange = "true";
+
 export default LoginScreen;

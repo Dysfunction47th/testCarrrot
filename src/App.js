@@ -36,9 +36,9 @@ function App() {
     <div className=''>
       
 
-{/* 
+
       <LoginScreen/>
-      <Mainpage/> */}
+      <Mainpage/>
 
       {/* {isLoggedIn ? (
         <Mainpage/>
@@ -46,31 +46,15 @@ function App() {
         <LoginScreen handleLogin={handleLogin} />
       )} */}
 
-{/* 
-      {isLoggedIn ? (
-        <Mainpage/>
-        
-        // <BrowserRouter>
-        //   <Routes>
-        //     <Mainpage/>
 
-        //     <Route path="./Mainpage" element={<Mainpage />} />
-          
-        //   </Routes>
-        // </BrowserRouter>
-      ) : (
-        <LoginScreen/>
-        // <LoginScreen handleLogin={handleLogin} />
-      )} */}
-
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Routes>
-          <Route path='/' element={<LoginScreen/>}> </Route>
+          <Route path='./components/LoginScreen' element={<LoginScreen/>}> </Route>
           {isLoggedIn ? (
             <Route path='./components/Mainpage' element={<Mainpage/>} ></Route>
           ) : null}
         </Routes>
-      </BrowserRouter>    
+      </BrowserRouter>     */}
 
     </div>
   

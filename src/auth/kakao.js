@@ -112,6 +112,10 @@ function Kakao() {
                             
                         
                         window.location.href = "src/components/Mainpage.js";
+                        // window.location.href = "src/App.js";
+                        
+                        // window.location.href = <Mainpage/>;
+                        
                                                   
                     })
 
@@ -135,8 +139,16 @@ function Kakao() {
 
     return (
         <div>
+            
+            <Mainpage/>
+
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/src/components/Mainpage.js" element={<Mainpage/>} ></Route>
 
 
+                </Routes>
+            </BrowserRouter>
 
 
 
