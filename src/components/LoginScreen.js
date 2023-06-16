@@ -44,20 +44,6 @@ function LoginScreen() {
     </div>
 
 
-
-    
-
-        <BrowserRouter>
-            <Routes>
-
-        
-              <Route path="/auth/kakao" element={<Kakao/>}></Route>
-              
-              
-            
-            </Routes>
-			</BrowserRouter>
-      
     </div>
   );
 }

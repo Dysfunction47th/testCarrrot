@@ -138,7 +138,7 @@ function Mainpage() {
                     {/* <!-- Product name--> */}
                     <h5 class="fw-bolder">상자</h5>
                     {/* <!-- Product price--> */}
-                    $40.00 - $80.00
+                    4000원 ~ 8000원
                   </div>
                 </div>
                 {/* <!-- Product actions--> */}
@@ -176,9 +176,9 @@ function Mainpage() {
                     </div>
                     {/* <!-- Product price--> */}
                     <span class="text-muted text-decoration-line-through">
-                      $20.00
+                      200,000원
                     </span>
-                    $18.00
+                    180,000원
                   </div>
                 </div>
                 {/* <!-- Product actions--> */}
@@ -211,9 +211,9 @@ function Mainpage() {
                     <h5 class="fw-bolder">기타</h5>
                     {/* <!-- Product price--> */}
                     <span class="text-muted text-decoration-line-through">
-                      $50.00
+                      50000원
                     </span>
-                    $25.00
+                    25000원
                   </div>
                 </div>
                 {/* <!-- Product actions--> */}
@@ -249,7 +249,7 @@ function Mainpage() {
                       <div class="bi-star-fill"></div>
                     </div>
                     {/* <!-- Product price--> */}
-                    $40.00
+                    400,000원
                   </div>
                 </div>
                 {/* <!-- Product actions--> */}
@@ -282,9 +282,9 @@ function Mainpage() {
                     <h5 class="fw-bolder">제습기</h5>
                     {/* <!-- Product price--> */}
                     <span class="text-muted text-decoration-line-through">
-                      $50.00
+                      $500,000원
                     </span>
-                    $25.00
+                    $250,000원
                   </div>
                 </div>
                 {/* <!-- Product actions--> */}
@@ -312,7 +312,7 @@ function Mainpage() {
                     {/* <!-- Product name--> */}
                     <h5 class="fw-bolder">운동화</h5>
                     {/* <!-- Product price--> */}
-                    $120.00 - $280.00
+                    120.000원 ~ 280.000원
                   </div>
                 </div>
                 {/* <!-- Product actions--> */}
@@ -353,9 +353,9 @@ function Mainpage() {
                     </div>
                     {/* <!-- Product price--> */}
                     <span class="text-muted text-decoration-line-through">
-                      $20.00
+                      200.000원
                     </span>
-                    $18.00
+                    180.000원
                   </div>
                 </div>
                 {/* <!-- Product actions--> */}
@@ -391,7 +391,7 @@ function Mainpage() {
                       <div class="bi-star-fill"></div>
                     </div>
                     {/* <!-- Product price--> */}
-                    $40.00
+                    100,000원
                   </div>
                 </div>
                 {/* <!-- Product actions--> */}

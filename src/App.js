@@ -33,43 +33,18 @@ function App() {
   
 
   return (
-    <div className=''>
-      
-
-
-      <LoginScreen/>
-      <Mainpage/>
-
-      {/* {isLoggedIn ? (
-        <Mainpage/>
-      ) : (
-        <LoginScreen handleLogin={handleLogin} />
-      )} */}
-
-
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Routes>
-          <Route path='./components/LoginScreen' element={<LoginScreen/>}> </Route>
-          {isLoggedIn ? (
-            <Route path='./components/Mainpage' element={<Mainpage/>} ></Route>
-          ) : null}
+          <Route path='/' element={<LoginScreen/>}> </Route>
+          <Route path='auth/kakao' element={<Kakao/>} ></Route>
+          <Route path='auth/src/components/Mainpage.js' element={<Mainpage/>} ></Route>
+        
+
         </Routes>
-      </BrowserRouter>     */}
-
-    </div>
-  
-  
-  
-
+      </BrowserRouter>    
   );
 }
 
-// export const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-// export const handleLogin = () => {
-//   setIsLoggedIn(true);
-//   console.log(setIsLoggedIn)
-
-// };
 
 export default App;
