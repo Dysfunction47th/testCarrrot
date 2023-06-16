@@ -40,16 +40,16 @@ function Kakao() {
 
     const navigate = useNavigate();
 
-    function avd(inputRouteCondtion) {
-        let routeCondtion = inputRouteCondtion;
+    // function avd(inputRouteCondtion) {
+    //     let routeCondtion = inputRouteCondtion;
 
-        if (routeCondtion == true) {
-            window.location.href = "src/components/Mainpage.js";         
-            // navigate("src/components/mainpage.js");
-        }
-        // window.location.href = "src/components/Mainpage.js";         
-        // navigate("src/components/mainpage.js");
-    }
+    //     if (routeCondtion == true) {
+    //         window.location.href = "src/components/Mainpage.js";         
+    //         // navigate("src/components/mainpage.js");
+    //     }
+    //     // window.location.href = "src/components/Mainpage.js";         
+    //     // navigate("src/components/mainpage.js");
+    // }
 
 
     const payload = qs.stringify({
@@ -105,24 +105,26 @@ function Kakao() {
                         
                         };
                   
-                        axios.post("src/components/mainpage.js" , user_date)
+                        axios.post("src/components/mainpage.js" , user_date).then(function (response) {
+                            
+                        })
+
+                            
+                        
                         window.location.href = "src/components/Mainpage.js";
                                                   
                     })
 
                     
 
-                    avd(1);
+                    // avd(1);
                     // navigate("src/components/mainpage.js");
 
         });
 
-        
+        // window.location.href = "src/components/index.html";
         
         // navigate("../components/Mainpage" , {replace: true});
-
-        
-        // goToMain();
 
         
 
